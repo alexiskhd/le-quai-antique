@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <div class="home">
+        <div class="homeBackground">
+            <div class="homeTopPart">
+                <img src="./assets/images/logo.png" alt="logo du restaurant" class="homeLogo" width="100px">
+                <a class="homeBooking" target="_blank" href={{ path('app_reservation')}}> RÉSERVER </a>
+            </div>
+            <div class="homeBottomPart">
+                <div class="homeHoraire">
+                    <p>lundi : fermé</p>
+                    <p>mar - sam: 12h-14h - 19h-22h</p>
+                    <p>dimanche: 12h-15h - fermé</p>
+                </div>
+                <div class="socialMedia">
+                    <a href="#"><img class="socialMediaInsta" src="./assets/images/insta-black.png" alt="lien vers instagram" width="20" height="20"></a>
+                    <a href="#"><img class="socialMediaFacebook" src="./assets/images/facebook.png" alt="lien vers facebook" width="20" height="20"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="arrow">
+                <span><img src="./assets/images/icons8-chevron-down-30.png" alt="fleche d'indication au scroll"></span>
+                <span><img src="./assets/images/icons8-chevron-down-30.png" alt="fleche d'indication au scroll"></span>
+                <span><img src="./assets/images/icons8-chevron-down-30.png" alt="fleche d'indication au scroll"></span>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <img src="./assets/images/logo.png" alt="logo du restaurant" class="navLogo">
+            <ul class="navUl">
+                <li>
+                    <a class="menus" href="{{path('app_menus')}}">Menus</a>
+                </li>
+
+                <a href=""><button class="navButtonBooking">Réserver</button></a>
+
+            </ul>
+        </nav>
+    </header>
+
+    <body>
+        <div class="intro">
+            <h1>LE MOT DU CHEF.</h1>
+            <p class="textIntro"> Nous sommes ravis de vous accueillir dans notre établissement. <br> Notre équipe de chefs passionnés mets tout en oeuvre pour vous offrir une expérience culinaire exceptionnelle. Nous sommes ainsi fiers de proposer une cuisine innovante et responsable en soutenant les producteurs locaux. Nous espérons que vous passerez un moment inoubliable chez nous et que notre cuisine vous plaira. </p>
+        </div>
+
+        <div class="background-champ">
+
+        </div>
+
+        <div class="main">
+            <div class="vegetablesSection">
+                {% for photo in photos %}
+                    {% if photo.saison == 'printemps'%}
+                        <img src="{{app.request.basepath}}/assets/images/{{photo.image}}" class="vegetableOfSaison" alt="légume du mois : {{ photo.name }}" title="{{ photo.name }}">
+                        <div class="vegetableDescription">
+                            <p class="vegetableText"><b>{{ photo.saison }}.</b> <br> <br> Ce mois ci nous mettons l'{{ photo.name}} à l'honneur</p>
+                        </div>
+                        {% elseif photo.saison == 'automne' %}
+                            <img src="{{app.request.basepath}}/assets/images/{{photo.image}}" class="vegetableOfSaison" alt="légume du mois : {{ photo.name }}" title="{{ photo.name }}">
+                            <div class="vegetableDescription">
+                                <p class="vegetableText"><b>{{ photo.saison }}.</b> <br> <br> Ce mois ci nous mettons l'{{ photo.name}} à l'honneur</p>
+                            </div>
+                            {% elseif photo.saison == 'été' %}
+                                <img src="{{app.request.basepath}}/assets/images/{{photo.image}}" class="vegetableOfSaison" alt="légume du mois : {{ photo.name }}" title="{{ photo.name }}">
+                                <div class="vegetableDescription">
+                                    <p class="vegetableText"><b class="saison">{{ photo.saison }}.</b> <br> <br> Ce mois ci nous mettons l'{{ photo.name}} à l'honneur</p>
+                                </div>
+                                {% elseif photo.saison == 'hiver' %}
+                                    <img src="{{app.request.basepath}}/assets/images/{{photo.image}}" class="vegetableOfSaison" alt="légume du mois : {{ photo.name }}" title="{{ photo.name }}">
+                                    <div class="vegetableDescription">
+                                        <p class="vegetableText"><b>{{ photo.saison }}.</b> <br> <br> Ce mois ci nous mettons l'{{ photo.name}} à l'honneur</p>
+                                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="backgroundMeat">
+                <div class="cookSection">
+                    <h2 class="cookTitle"></h2>
+                    <p class="cookText"> <b>CUISINE RESPONSABLE. </b> <br> <br>Nos plats sont cuisinés à partir de produits issus de l'Agriculture et de la Pêche responsable</p>
+                    <img class="farmers" src="./assets/images/background-farmers.jpg" width="630px" height="470px" alt="image d'un élevage de vache">
+                </div>
+            </div>
+
+            <div class="backgroundFishing">
+                <img class="photo-fish"src="./assets/images/plat-poisson.jpg" alt="image d'un plat de poisson">
+            </div>
+
+            <div class="pastrySection">
+                <p class="pastryChef"><b>LOREM IPSUM.</b> <br> <br> dolor sit amet, consectetur adipiscing elit. Enim facilisis gravida neque convallis a cras semper. Montes nascetur. Enim facilisis gravida neque convallis a cras semper. Montes nascetur </p>
+
+                <div class="pastryImages">
+                    {% for photo in photos %}
+                        {% if photo.saison == '' %}
+                            <img class="pastryWidth" src="{{app.request.basepath}}/assets/images/{{photo.image}}" alt="{{ photo.name }}" title="{{ photo.name }}: {{ photo.description }}">
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div>
+                <hr>
+            </div>
+            <div class="footer-info">
+                <div>
+                    <a href="mailto:lequaiantique@mail.fr" class="contact">lequaiantique@mail.fr</a><br>
+                    <a href="tel:0420304050" class="contact">0420304050</a>
+                </div>
+                <div class="adresse">
+                    <p>14, rue de la Savoie <br> 73100 Aix-les-Bains</p>
+                </div>
+                <div>
+                    <table class="footer-table">
+                        <tbody>
+                        <tr>
+                            <td>mar - sam: </td>
+                            <td class="td-horaires">12h-14h - 19h-22h</td>
+                        </tr>
+                        <tr>
+                            <td>dimanche: </td>
+                            <td class="td-horaires">11h-15h</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="cgu">
+                <p>Copyrate alexiskhd - 2023</p>
+            </div>
+
+        </footer>
+
+        <script>
+            var rellax = new Rellax ('.rellax');
+        </script>
+    </body>
+{% endblock %}

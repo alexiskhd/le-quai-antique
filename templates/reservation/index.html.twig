@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservationController!{% endblock %}
+
+{% block body %}
+
+    <div class="reservation">
+        <div class="reservationLogo">
+            <img src="./assets/images/logo.png" alt="" width="150" height="80">
+        </div>
+        <p class="reservationText">Pour toute reservation de plus de <b>12 personnes</b>, merci de nous contacter directement par téléphone</p>
+        <p class="reservationText">Pour un évènement, il est possible de réserver l'intégralité du restaurant à partir de <b>30 personnes</b></p>
+        <!-- resOS Booking widget script START -->
+        <a class="widgetReservation" id="booking-widget-2" href="https://le-quai-antique.resos.com/booking" data-lang="fr" data-restaurant-id="gbMRQHaebvj6qHXme" data-domain="le-quai-antique.resos.com">Réserver une table</a>
+        <div id="booking-script-2" style="text-align:center;opacity:0.6;font-size:70%;margin-top:10px;">
+            <a target="_blank" href="https://resos.com"></a>
+        </div>
+    </div>
+        <script type="text/javascript">
+            const scr=document.createElement("script");scr.src="https://le-quai-antique.resos.com/embed/booking/widget.js?ts="+new Date().getTime();document.getElementById("booking-script-2").appendChild(scr);
+        </script>
+        <!-- resOS Booking widget script END -->
+
+{% endblock %}
