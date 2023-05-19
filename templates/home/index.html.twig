@@ -6,7 +6,7 @@
     <div class="home">
         <div class="homeBackground">
             <div class="homeTopPart">
-                <img src="./assets/images/logo.png" alt="logo du restaurant" class="homeLogo" width="100px">
+                <img src="./assets/images/logo.png" alt="logo du restaurant" class="homeLogo">
                 <a class="homeBooking" target="_blank" href={{ path('app_reservation')}}> RÉSERVER </a>
             </div>
             <div class="homeBottomPart">
@@ -16,8 +16,8 @@
                     <p>dimanche: 12h-15h - fermé</p>
                 </div>
                 <div class="socialMedia">
-                    <a href="#"><img class="socialMediaInsta" src="./assets/images/insta-black.png" alt="lien vers instagram" width="20" height="20"></a>
-                    <a href="#"><img class="socialMediaFacebook" src="./assets/images/facebook.png" alt="lien vers facebook" width="20" height="20"></a>
+                    <a href="#"><img class="socialMediaInsta" src="./assets/images/insta-black.png" alt="lien vers instagram" ></a>
+                    <a href="#"><img class="socialMediaFacebook" src="./assets/images/facebook.png" alt="lien vers facebook" ></a>
                 </div>
             </div>
 
@@ -39,9 +39,9 @@
                 <li>
                     <a class="menus" href="{{path('app_menus')}}">Menus</a>
                 </li>
-
-                <a href=""><button class="navButtonBooking">Réserver</button></a>
-
+                <li>
+                    <a href="{{ path('app_reservation') }}" target="_blank" class="navButtonBooking">Réserver</a>
+                </li>
             </ul>
         </nav>
     </header>

@@ -4,96 +4,76 @@
 
 {% block body %}
     <div class="navMenus">
-        <img class="navMenusLogo" src="./assets/images/logo.png" alt="">
+        <img class="navMenusLogo" src="./assets/images/logo.png" alt="logo du restaurant">
         <a class="return" href="{{path('app_home')}}">Retour à l'accueil</a>
 
     </div>
 
     <div class="containerMenus">
 
-    <div class="headerMenus">
-        <img class="illustration" src="./assets/images/illustrationMenus.jpg" alt="">
-        <p class="textIllustration">lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim facilisis gravida neque convallis a cras semper. Enim facilisis gravida neque convallis a cras semper</p>
-    </div>
-
-    <div class="box">
-        <div class="title not-border" onclick="toggleBox(this)">
-            <div class="title-text">Entrées</div>
-        </div>
-        <div class="content">
-            {% for product in products %}
-                {% if product.category.name == 'Entrées' %}
-                    <h3> {{ product.name }} </h3>
-                    <p>{{ product.description }}</p>
-                    <p>{{ product.price }}</p>
-                    <hr>
-                {% endif %}
-            {% endfor %}
+        <div class="headerMenus">
+            <img class="illustration" src="./assets/images/illustrationMenus.jpg" alt="illustration présentation du menus">
+            <p class="textIllustration">lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim facilisis gravida neque convallis a cras semper. Enim facilisis gravida neque convallis a cras semper</p>
         </div>
 
-        <div class="title" onclick="toggleBox(this)">
-            <div class="title-text">Plats</div>
-        </div>
-        <div class="content">
-            {% for product in products %}
-                {% if product.category.name == 'Plats' %}
-                    <h3> {{ product.name }} </h3>
-                    <p>{{ product.description }}</p>
-                    <p>{{ product.price }}</p>
-                    <hr>
-                {% endif %}
-            {% endfor %}
-        </div>
+        <div class="box">
+            <div class="title not-border" onclick="toggleBox(this)">
+                <div class="title-text">Entrées</div>
+            </div>
+            <div class="content">
+                {% for product in products %}
+                    {% if product.category.name == 'Entrées' %}
+                        <h3> {{ product.name }} </h3>
+                        <p>{{ product.description }}</p>
+                        <p>{{ product.price }}</p>
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-        <div class="title" onclick="toggleBox(this)">
-            <div class="title-text">Desserts</div>
-        </div>
-        <div class="content">
-            {% for product in products %}
-                {% if product.category.name == 'Desserts' %}
-                    <h3> {{ product.name }} </h3>
-                    <p>{{ product.description }}</p>
-                    <p>{{ product.price }}</p>
-                    <hr>
-                {% endif %}
-            {% endfor %}
-        </div>
+            <div class="title" onclick="toggleBox(this)">
+                <div class="title-text">Plats</div>
+            </div>
+            <div class="content">
+                {% for product in products %}
+                    {% if product.category.name == 'Plats' %}
+                        <h3> {{ product.name }} </h3>
+                        <p>{{ product.description }}</p>
+                        <p>{{ product.price }}</p>
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-        <div class="title" onclick="toggleBox(this)">
+            <div class="title" onclick="toggleBox(this)">
+                <div class="title-text">Desserts</div>
+            </div>
+            <div class="content">
+                {% for product in products %}
+                    {% if product.category.name == 'Desserts' %}
+                        <h3> {{ product.name }} </h3>
+                        <p>{{ product.description }}</p>
+                        <p>{{ product.price }}</p>
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-            <div class="title-text">Menus</div>
-        </div>
-        <div class="content">
-            {% for product in products %}
-                {% if product.category.name == 'Menus' %}
-                    <h3 class="h3tittle"> {{ product.name }} </h3>
-                    <p>{{ product.description }}</p>
-                    <p>{{ product.price }}</p>
-                    <hr>
-                {% endif %}
-            {% endfor %}
-        </div>
+            <div class="title" onclick="toggleBox(this)">
+                <div class="title-text">Menus</div>
+            </div>
+            <div class="content">
+                {% for product in products %}
+                    {% if product.category.name == 'Menus' %}
+                        <h3 class="h3tittle"> {{ product.name }} </h3>
+                        <p>{{ product.description }}</p>
+                        <p>{{ product.price }}</p>
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-        <div class="title" onclick="toggleBox(this)">
-
-            <div class="title-text">Vins</div>
         </div>
-        <div class="content">
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus eum tempora sunt beatae, voluptatibus, iste vero excepturi aspernatur tenetur pariatur qui quaerat dolorum maxime dolor voluptatem earum asperiores, enim quo.
-            </p>
-        </div>
-
-        <div class="title" onclick="toggleBox(this)">
-
-            <div class="title-text">Vins</div>
-        </div>
-        <div class="content">
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus eum tempora sunt beatae, voluptatibus, iste vero excepturi aspernatur tenetur pariatur qui quaerat dolorum maxime dolor voluptatem earum asperiores, enim quo.
-            </p>
-        </div>
-    </div>
     </div>
 
 <script>

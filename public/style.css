@@ -33,26 +33,33 @@
 
 .homeBottomPart{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .homeHoraire{
-    margin-left: 10px;
+    margin-right: 15px;
     margin-top: 10px;
     line-height: 20px;
     font-size: 0.9rem;
-    color: #cbcbcb;
+    color: black;
 }
 
 .socialMedia{
     display: flex;
-    flex-direction: column;
-    margin-right: 10px;
-    margin-top: 25px;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
+.socialMediaInsta,
+.socialMediaFacebook{
+    width: 20px;
+    height: 20px;
+}
 .socialMediaInsta{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
 }
 .homeLogo.scrollRemove{
     opacity: 0;
@@ -157,7 +164,7 @@
 .navUl{
     display: flex;
     flex-direction: row;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 .navUl li {
@@ -165,7 +172,7 @@
     margin-top: 15px;
 }
 
-.navUl li a {
+.menus{
     color: black;
     font-size: 1.1em;
     padding: 14px 35px;
@@ -173,7 +180,7 @@
     border-radius: 2px;
 }
 
-.navUl li a:hover{
+.menus:hover{
     background-color: #F4D73F;
     border-radius: 10px;
     transition: 0.3s ease-out;
@@ -183,13 +190,9 @@
 .navButtonBooking{
     background-color: #F4D73F;
     border: solid #F4D73F 1px;
-    border-radius: 10px;
+    border-radius: 11px;
     color: black;
-    width: 120px;
-    height: 50px;
-    margin-top: 21px;
-    margin-right: 45px;
-    margin-left: 10px;
+    padding: 14px 35px;
     font-size: 1.1em;
     font-weight: 300;
 }
@@ -206,7 +209,7 @@
     float: left;
     margin: 16px 60px;
     width: 90px;
-    height: auto;
+    height: 55px;
 }
 
 .intro{
@@ -458,25 +461,52 @@ h1{
     .navLogo{
         float: left;
         margin: 16px 40px;
-        width: 90px;
-        height: auto;
+        width: 80px;
+        height: 50px;
+    }
+
+    .navUl{
+        display: flex;
+        flex-direction: row;
+        margin-right: 20px;
     }
 
     .navUl li {
-        padding: 20px 10px;
-        margin-top: 10px;
+        padding: 20px 5px;
+        margin-top: 15px;
+    }
+
+    .menus{
+        color: black;
+        font-size: 1.1em;
+        padding: 10px 20px;
+        border: solid #F4D73F 1px;
+        border-radius: 2px;
+    }
+
+    .menus:hover{
+        background-color: #F4D73F;
+        border-radius: 10px;
+        transition: 0.3s ease-out;
+
     }
 
     .navButtonBooking{
-        background-color: black;
-        color: white;
-        border: none;
-        width: 100px;
-        height: 40px;
-        margin-top: 22px;
-        margin-right: 15px;
-        margin-left: 10px;
+        background-color: #F4D73F;
+        border: solid #F4D73F 1px;
+        border-radius: 11px;
+        color: black;
+        padding: 10px 20px;
+        font-size: 1.1em;
         font-weight: 300;
+    }
+
+    .navButtonBooking:hover{
+        background-color: white;
+        border: solid #F4D73F 1px;
+        border-radius: 2px;
+        color: black;
+        transition: all 0.3s ease-out;
     }
 
     .background-champ{
@@ -641,7 +671,7 @@ h1{
 
 }
 
-/* ---- très petit mobile ---- */
+/* ---- très mobile xs---- */
 @media screen and (max-width: 312px ) {
     .pastryImages {
         width: 100%;
@@ -689,7 +719,8 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
+    max-width: 390px;
+    min-width: 200px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -712,7 +743,7 @@ h1{
 }
 
 .content{
-    background-color: #acb6be;
+    background-color: #e5e5e5;
     max-height:0;
     overflow: hidden;
     transition: max-height .6s ease-out;
@@ -748,7 +779,7 @@ h1{
 }
 
 .opened + .content{
-    max-height: 400px;
+    max-height: 1000px;
     transition: max-height 0.2s ease-out;
 }
 
@@ -763,7 +794,7 @@ h1{
 
 .reservationLogo{
     width: 150px;
-    height: 80px;
+    height: 90px;
     margin-bottom: 30px;
 }
 
@@ -785,10 +816,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
     height: 100vh;
-
     margin-left: auto;
     margin-right: auto;
     background: rgb(255,238,148);
@@ -798,7 +826,10 @@ h1{
     background: background: rgb(255,255,245);
     background: linear-gradient(180deg, rgba(255,255,245,1) 2%, rgba(255,255,215,1) 64%, rgba(254,252,213,1) 100%);*/
 }
-
+.imageError{
+    width: 120px;
+    height: 70px;
+}
 .errorNumber{
     margin-top: 60px;
     margin-bottom: 60px;
@@ -810,5 +841,10 @@ h1{
     margin-bottom: 60px;
     font-size: 1.1em;
 }
+
+/* ------------- formulaire de connexion ------------ */
+
+
+
 
 
