@@ -3,6 +3,7 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-family: 'poppins', sans-serif;
 }
 
 .home{
@@ -111,9 +112,6 @@
     display: block;
     width: 1.5vw;
     height: 1.5vw;
-    /*border-bottom: 5px solid black;
-    border-right: 5px solid black;
-    transform: rotate(45deg);*/
     margin: -10px;
     animation: animate 2s infinite;
 }
@@ -222,6 +220,7 @@
 
 h1{
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .textIntro{
@@ -308,6 +307,11 @@ h1{
     background-color: white;
 }
 
+h2 .cookTitle{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
 .cookText{
     width: 100%;
     font-size: 1.4rem;
@@ -389,6 +393,7 @@ h1{
     justify-content: space-around;
     align-items: center;
     margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .contact{
@@ -396,12 +401,7 @@ h1{
     line-height: 22px;
 }
 
-.cgu{
-    align-self: center;
-    margin-top: 80px;
-    margin-bottom: 20px;
-    font-size: 0.7rem;
-}
+
 .td-horaires{
     padding-left: 30px;
 }
